@@ -1,0 +1,61 @@
+
+@import url("//fonts.googleapis.com/css?family=Open Sans");
+
+body {
+    font-family: "FreeSans", "Ubuntu",Tahoma,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    backhround-color: #eee;
+    color: #073642;
+}
+
+div .splash {
+    font-family: 'monospace';
+    font-size: 120%;
+    font-weight: bold;
+    text-align: center;
+}
+
+div .purpose {
+    font-size: 120%;
+    font-style: italic;
+}
+
+
+.navbar-default{
+    background-color:#eee;
+    border-color:#ccc;
+}
+
+/*
+.navbar-brand{
+    background-image: url('zooflogo64.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+*/
+
+.navbar-default .navbar-brand{
+    color: #073642;
+    font-weight: bold;
+    font-family: 'monospace';
+}
+
+.navbar-default .navbar-nav>li>a{
+    color: #073642;
+}
+.navbar-default .navbar-nav>li>a:hover{
+    color: #268bd2;
+}
+
+
+footer {
+  background-color: #eee;
+  border-color:#ccc;
+  color: #666;
+}
+
+footer a, footer a:hover{
+    color: #444;
+}
+footer .pull-right a {
+    color: #268bd2;
+}
