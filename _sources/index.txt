@@ -48,10 +48,9 @@
     Getting started is easy, since Zoof can take care of installing the
     programming language and additional packages.
     
-    We believe that making (scientific) computing easier accessible is
-    an important step to make science more reproducable, and promotes
-    freedom and independence.
-
+    We believe that making (scientific) computing easier accessible promotes
+    freedom and independence, and is an important step to make science
+    more reproducable.
 
 
 .. raw:: html
