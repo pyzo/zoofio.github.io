@@ -20,7 +20,7 @@
     
     .. raw:: html
         
-        <!-- The briefest summary for Zoof --!>
+        <!-- The briefest summary for Zoof -->
         Zoof - download, run, start coding!
         <br />
         <br />
@@ -29,7 +29,7 @@
         <i class="fa fa-download"></i> Download &nbsp;&nbsp;
         <i class="fa fa-play-circle"></i> Run &nbsp;&nbsp;
         <i class="fa fa-child"></i> Coding!
-        --!>
+        -->
 
 
 .. container:: purpose
@@ -57,7 +57,7 @@
 .. raw:: html
 
     </div></div></div>
-    </div> <!-- ex intro --!>
+    </div> <!-- ex intro -->
     
     <div class="container">
     <div class="row">
