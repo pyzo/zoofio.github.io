@@ -1,0 +1,67 @@
+
+------------
+Zoof pricing
+------------
+
+**Let's make this clear: Zoof is free and always will be.**
+
+We are still figuring out the exact business model, but in any case the
+free version of Zoof will be open source, freely available and without
+any restrcitions in functionality.
+
+
+
+
+.. raw:: html
+    
+    <h3>Get support</h3>
+    With Support Basic you get priority support and we provide a
+    new binary of Zoof when necessary. With Support Pro we do what we can
+    to help solve your problem with any of the packages that make up
+    your programming environment. See our terms and conditions for details.
+    Prices are per person, per year.
+    <br /><br />
+    
+    <div class="row"> <div class="col-lg-8 col-md-10 col-sm-12">
+    <table class='table pricing-table'>
+        <tr>
+        <td>Support Basic</td><td>&#8364;&nbsp;50</td> <td> Support for Zoof application </td><td>Buy</td>
+        </tr><tr>
+        <td>Support Pro</td><td>&#8364;&nbsp;500</td> <td> Support for Zoof and the programming environments that it provides </td><td>Buy</td>
+        </tr><tr>
+        <td>Other support</td><td>-</td> <td> Need a specific feature? </td><td>Contact</td>
+        </tr>
+    </table>
+    </div> </div>
+    
+    
+    <h3>Donations</h3>
+    Show your love, because every penny counts!
+    <br /><br />
+    
+    <div class="row"> <div class="col-lg-8 col-md-10 col-sm-12">
+    <table class='table pricing-table'>
+        <tr>
+        <td>Donate</td><td>&#8364;&nbsp;15</td> <td> Support the development of Zoof, your name will be in the list of contributors (on website and in application)</td><td>Donate</td>
+        </tr><tr>
+        <td>Donate</td><td>-</td> <td> Anonoumously support the development of Zoof</td><td>Donate</td>
+        </tr>
+    </table>
+    </div> </div>
+    
+    
+    <h3>Sponsoring</h3>
+    If your company relies on Zoof, consider supporting its
+    development so that we can keep making it better. 
+    <br /><br />
+    
+    <div class="row"> <div class="col-lg-8 col-md-10 col-sm-12">
+    <table class='table pricing-table'>
+        <tr>
+        <td>Silver</td><td>&#8364;&nbsp;1000</td> <td> Company logo on sponsors page on website and in application </td><td>Sponsor</td>
+        </tr><tr>
+        <td>Gold</td><td>&#8364;&nbsp;5000</td> <td> Company logo on front page and in splash screen </td><td>Sponsor</td>
+        </tr>
+    </table>
+    </div> </div>
+    
