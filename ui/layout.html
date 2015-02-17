@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Layout &mdash; the interactive IDE for dynamic languages</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.1.0/readable/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/font-awesome-4.2.0/css/font-awesome.min.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="the interactive IDE for dynamic languages" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Zoof</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="../docs.html"><i class='fa fa-book'></i> Documentation</a></li>
+                <li><a href="http://github.com/zoofIO/zoof"><i class='fa fa-github'></i> Source</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Zoof.io <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="simple">
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Layout</a><ul>
+<li><a class="reference internal" href="#no-layout">No layout</a></li>
+<li><a class="reference internal" href="#hbox-and-vbox">HBox and VBox</a></li>
+<li><a class="reference internal" href="#form">Form</a></li>
+<li><a class="reference internal" href="#grid">Grid</a></li>
+<li><a class="reference internal" href="#pinboard">PinBoard</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="layout">
+<h1>Layout<a class="headerlink" href="#layout" title="Permalink to this headline">¶</a></h1>
+<p>There are a variety of ways to layout widgets in <cite>zoof.ui</cite>. The most
+common is to align things horizonaltally or vertically using a box layout.
+A form layout can also be convenient. For more control there is a grid,
+and for more flexibility there is PinBoard layout.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">These examples are all working code. When building the docs, the
+Python code of the examples is executed and the resulting app is
+exported to a standalone html file. These html files are displayed
+in this page in iframes. In a proper browser the example apps can
+be resized.</p>
+</div>
+<div class="section" id="no-layout">
+<h2>No layout<a class="headerlink" href="#no-layout" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s start by looking at what would happen without any layout. We just
+create an app with three buttons.</p>
+<pre style='font-size:small;'>
+from zoof import ui
+class MyApp(ui.App):
+    def init(self):
+        self.b1 = ui.Button(self, 'Hello world')
+        self.b2 = ui.Button(self, 'Foo')
+        self.b3 = ui.Button(self, 'Bar')
+</pre>
+<a target='new' href='example580af29007e60a2d7bc04f3d8bc59bb0.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 600px; height: 100px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe style='width: 100%; height: 100%; border: 2px solid #094; ' src='example580af29007e60a2d7bc04f3d8bc59bb0.html'>iframe not supported</iframe></div><br /><p>What happens is that this is HTML, so the buttons will simply be placed
+after each-other until they no longer fit on one row. By applying
+appropriate styling you can make them each appear on a line, or e.g.
+<tt class="docutils literal"><span class="pre">float:</span> <span class="pre">left</span></tt>. But real GUI-like layout is best done using actual
+layout classes!</p>
+</div>
+<div class="section" id="hbox-and-vbox">
+<h2>HBox and VBox<a class="headerlink" href="#hbox-and-vbox" title="Permalink to this headline">¶</a></h2>
+<p>With the <cite>HBox</cite> class, you can layout widgets horizontally. Note the use of
+the flex argument. It determines how the widget is stretched. A flex of 0
+means to not stretch, but use the minimal sensible width.</p>
+<pre style='font-size:small;'>
+from zoof import ui
+
+class MyApp(ui.App):
+    def init(self):
+        with ui.HBox(self):
+            self.b1 = ui.Button(text='Hola', flex=0)
+            self.b2 = ui.Button(text='Hello world', flex=1)
+            self.b3 = ui.Button(text='Foo bar', flex=2)
+</pre>
+<a target='new' href='example3be3bcafd0fd0575663d0234721c4eee.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 600px; height: 100px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe style='width: 100%; height: 100%; border: 2px solid #094; ' src='example3be3bcafd0fd0575663d0234721c4eee.html'>iframe not supported</iframe></div><br /><p>You can see how the layout is used as context manager. Inside this
+context, the elements do not have to specify the parent, since the
+layout automatically becomes the parent. A nice side-effect is that the
+source gets structured in a way that reflects the structure of the
+elements.</p>
+<p>The <cite>VBox</cite> class is similar to the <cite>HBox</cite>, except now the widgets are
+aligned vertically. Note how we don&#8217;t specify a flex here, effectively
+giving the buttons a flex of 0.</p>
+<pre style='font-size:small;'>
+from zoof import ui
+
+class MyApp(ui.App):
+    def init(self):
+        with ui.VBox(self):
+            self.b1 = ui.Button(text='Hola')
+            self.b2 = ui.Button(text='Hello world')
+            self.b3 = ui.Button(text='Foo bar')
+            ui.Widget(flex=1)
+</pre>
+<a target='new' href='example4403d300085cfa723b6447c6576fd3d7.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 600px; height: 100px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe style='width: 100%; height: 100%; border: 2px solid #094; ' src='example4403d300085cfa723b6447c6576fd3d7.html'>iframe not supported</iframe></div><br /><p>In the above app, we use an empty widget as a spacer. This is because
+the VBox and HBox always want to fill their space. If we would not put
+the stub widged at the end, all elements would be stretched to fill up
+the whole space.</p>
+<pre style='font-size:small;'>
+from zoof import ui
+
+class MyApp(ui.App):
+    def init(self):
+        with ui.VBox(self):
+            self.b1 = ui.Button(text='Hola')
+            self.b2 = ui.Button(text='Hello world')
+            self.b3 = ui.Button(text='Foo bar')
+</pre>
+<a target='new' href='exampleb5baf66b4b4aa6a14630c998cbaf6833.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 600px; height: 100px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe style='width: 100%; height: 100%; border: 2px solid #094; ' src='exampleb5baf66b4b4aa6a14630c998cbaf6833.html'>iframe not supported</iframe></div><br /><p>One difference you can observe between HBox and VBox is that the
+elements in the VBox get fully stretched horizontally, while the elements
+in a HBox do <em>not</em> get stretched vertically. This is because elements
+(e.g. buttons) still look ok when they are wider than necessary, but look
+strange when they are higher than necessary. We may add arguments to the
+layout to influence this behavior.</p>
+<p>Now for a more complex example. A couple of HBox&#8217;es in a VBox, to show
+some possible variations. Also note how this syntax for writing out the
+layout leads to a clear structure that corresponds to how the the
+widgets are organized.</p>
+<pre style='font-size:small;'>
+from zoof import ui
+
+class MyApp(ui.App):
+    def init(self):
+        with ui.VBox(self):
+
+            ui.Label(text='Flex 0 0 0')
+            with ui.HBox(flex=0):
+                self.b1 = ui.Button(text='Hola', flex=0)
+                self.b2 = ui.Button(text='Hello world', flex=0)
+                self.b3 = ui.Button(text='Foo bar', flex=0)
+
+            ui.Label(text='Flex 1 0 3')
+            with ui.HBox(flex=0):
+                self.b1 = ui.Button(text='Hola', flex=1)
+                self.b2 = ui.Button(text='Hello world', flex=0)
+                self.b3 = ui.Button(text='Foo bar', flex=3)
+
+            ui.Label(text='margin 10 (around layout)')
+            with ui.HBox(flex=0, margin=10):
+                self.b1 = ui.Button(text='Hola')
+                self.b2 = ui.Button(text='Hello world')
+                self.b3 = ui.Button(text='Foo bar')
+
+            ui.Label(text='spacing 10 (inter-widget)')
+            with ui.HBox(flex=0, spacing=10):
+                self.b1 = ui.Button(text='Hola')
+                self.b2 = ui.Button(text='Hello world')
+                self.b3 = ui.Button(text='Foo bar')
+
+            ui.Widget(flex=1)
+            ui.Label(text='Note the spacer Widget above')
+</pre>
+<a target='new' href='exampled7c935a7fb27dd838ede3647a14fe631.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 600px; height: 300px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe style='width: 100%; height: 100%; border: 2px solid #094; ' src='exampled7c935a7fb27dd838ede3647a14fe631.html'>iframe not supported</iframe></div><br /></div>
+<div class="section" id="form">
+<h2>Form<a class="headerlink" href="#form" title="Permalink to this headline">¶</a></h2>
+<p>The Form layout is a specific case of the Grid layout (which will be
+discussed next). It is a very convenient layout when you have a buncg
+of widgets (or labels) next to labels to describe them. Like in a form.</p>
+<p>As you can see, you simply specify the elements, and each pair of elements
+is placed on a row. The left row has an implicit flex of zero, and the right
+row an implicit flex of 1. To not stretch the rows, we add a simple stretcher
+element at the end. In the Form layout, the specified flex applies to
+the vertical direction.</p>
+<pre style='font-size:small;'>
+from zoof import ui
+
+class MyApp(ui.App):
+    def init(self):
+        with ui.Form(self):
+            ui.Label(text='Pet name:')
+            self.b1 = ui.Button(text='Hola')
+            ui.Label(text='Pet Age:')
+            self.b2 = ui.Button(text='Hello world')
+            ui.Label(text='Pet\'s Favorite color:')
+            self.b3 = ui.Button(text='Foo bar')
+            ui.Widget(flex=1)
+</pre>
+<a target='new' href='example74f1402e87328d831bcd04ae525bda09.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 600px; height: 200px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe style='width: 100%; height: 100%; border: 2px solid #094; ' src='example74f1402e87328d831bcd04ae525bda09.html'>iframe not supported</iframe></div><br /></div>
+<div class="section" id="grid">
+<h2>Grid<a class="headerlink" href="#grid" title="Permalink to this headline">¶</a></h2>
+<p>The Grid layout provides a way to layout elements in a grid. It is quite
+flexible, but less easier to use then the above layouts. In many cases you can
+get a way with a bunch of HBoxes and VBoxes, and/or a Form layout. Otherwise,
+here&#8217;s how Grid works.</p>
+<p>Each element needs a <cite>pos</cite> argument that is a tuple of two integers
+that specify the position within the grid to place the element. Flex
+values can also be given, but here they are tuples: they specify the
+flex for width and height, respectively.</p>
+<pre style='font-size:small;'>
+from zoof import ui
+
+class MyApp(ui.App):
+    def init(self):
+        with ui.Grid(self):
+            self.b1 = ui.Button(text='No flex', pos=(0, 0))
+            self.b2 = ui.Button(text='Hola', pos=(1, 1), flex=(1, 1))
+            self.b3 = ui.Button(text='Hello world', pos=(2, 2), flex=(2, 1))
+            self.b4 = ui.Button(text='Foo bar', pos=(4, 4), flex=(1, 2))
+            self.b5 = ui.Button(text='no flex again', pos=(5, 5))
+</pre>
+<a target='new' href='example10933e1e4e874311023651b7a669a7bb.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 600px; height: 300px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe style='width: 100%; height: 100%; border: 2px solid #094; ' src='example10933e1e4e874311023651b7a669a7bb.html'>iframe not supported</iframe></div><br /></div>
+<div class="section" id="pinboard">
+<h2>PinBoard<a class="headerlink" href="#pinboard" title="Permalink to this headline">¶</a></h2>
+<p><em>Name is subject to change</em></p>
+<p>The PinBoard layout free layout without any form of alignment. Elements
+are given a certain position and that&#8217;s where they&#8217;ll be. The position
+must be specified via the <cite>pos</cite> argument. When it is larger than 1, it
+is in pixels. When it is smaller than 1, it is regarded a fractional
+position (i.e. as in a percentage of the parent size).</p>
+<pre style='font-size:small;'>
+from zoof import ui
+
+class MyApp(ui.App):
+    def init(self):
+        with ui.PinBoard(self):
+            self.b1 = ui.Button(text='Stuck at (20, 20)', pos=(20, 30))
+            self.b2 = ui.Button(text='Dynamic at (20%, 20%)', pos=(0.2, 0.2))
+            self.b3 = ui.Button(text='Dynamic at (50%, 70%)', pos=(0.5, 0.7))
+</pre>
+<a target='new' href='examplea7cf52802acec2deb1daa8f301c05a7f.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 600px; height: 300px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe style='width: 100%; height: 100%; border: 2px solid #094; ' src='examplea7cf52802acec2deb1daa8f301c05a7f.html'>iframe not supported</iframe></div><br /><br /><br /><br /><br /><br /></div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+
+  <div class="container">
+    <ul class="list-inline">
+      <li class="pull-right"><a href="#">Back to top</a></li>
+    </ul>
+    <ul class="list-unstyled small">
+      <li>Copyright <i class='fa fa-copyright'></i> 2014 Almar Klein</li>
+      <li>Code licensed under
+        <a href="http://opensource.org/licenses/BSD-2-Clause">BSD license</a>,
+        website and documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0 </a>
+      </li>
+      <!--
+      <li>
+        Made with <a href="http://sphinx-doc.org">sphinx</a> using the excellent
+        <a href="https://github.com/ryan-roemer/sphinx-bootstrap-theme">bootstrap theme</a>
+      </li>
+      -->
+    </ul>
+  </div>
+</footer>
+  </body>
+</html>

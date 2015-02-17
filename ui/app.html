@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Applications &mdash; the interactive IDE for dynamic languages</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.1.0/readable/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/font-awesome-4.2.0/css/font-awesome.min.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="the interactive IDE for dynamic languages" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Zoof</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="../docs.html"><i class='fa fa-book'></i> Documentation</a></li>
+                <li><a href="http://github.com/zoofIO/zoof"><i class='fa fa-github'></i> Source</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Zoof.io <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="simple">
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Applications</a><ul>
+<li><a class="reference internal" href="#desktop-app-or-web-app">Desktop app or web app?</a></li>
+<li><a class="reference internal" href="#creating-an-app">Creating an app</a></li>
+<li><a class="reference internal" href="#how-is-the-app-hosted">How is the app hosted?</a></li>
+<li><a class="reference internal" href="#multiple-apps">Multiple apps</a></li>
+<li><a class="reference internal" href="#interactive-use">Interactive use</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="applications">
+<h1>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h1>
+<p>Zoof.ui is all about creating applications. Although it is implemented
+using web technology, Zoof.ui is very much a Python GUI toolkit. You do not
+need to know anything about HTML or JavaScript in order to use it.</p>
+<div class="section" id="desktop-app-or-web-app">
+<h2>Desktop app or web app?<a class="headerlink" href="#desktop-app-or-web-app" title="Permalink to this headline">¶</a></h2>
+<p>Zoof.ui can create applications that look and feel native.
+The fact that its build with web technoligy does not necesarily mean
+that your user will use the browser to view your app. We realize this
+through invoking a &#8220;web-runtime&#8221;, which is basically a browser that
+shows a single page and looks native.</p>
+<p>Zoof.ui can also create web apps, and host these to many users at
+the same time. It can even host multiple apps from the same process.
+Therefore the way to define an app may be slightly different than the
+GUI toolkit you&#8217;re familiar with.</p>
+</div>
+<div class="section" id="creating-an-app">
+<h2>Creating an app<a class="headerlink" href="#creating-an-app" title="Permalink to this headline">¶</a></h2>
+<p>In Zoof.ui, you create an <em>app class</em>, and one instance of this class
+is used for each &#8220;connection&#8221;. Typically, an app definition looks
+more or less like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">zoof</span> <span class="kn">import</span> <span class="n">ui</span>
+
+<span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">ui</span><span class="o">.</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># create widgets here</span>
+
+<span class="n">ui</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>  <span class="c"># Enter the main loop</span>
+</pre></div>
+</div>
+<p>The process will run an HTTP server to host your app, and an instance
+of <tt class="docutils literal"><span class="pre">MyApp</span></tt> is created every time that a connection is made. The
+<tt class="docutils literal"><span class="pre">App.init()</span></tt> method is automatically called, and is the main place
+for you to add code.</p>
+<p>If you are developing a desktop app, (or are testing things), you can
+add the following line right before the call to <tt class="docutils literal"><span class="pre">ui.run()</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">app</span> <span class="o">=</span> <span class="n">MyApp</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This will create an instance of your app, and also fire up a web runtime
+(i.e. a browser that looks like a native app) to connect to it.</p>
+</div>
+<div class="section" id="how-is-the-app-hosted">
+<h2>How is the app hosted?<a class="headerlink" href="#how-is-the-app-hosted" title="Permalink to this headline">¶</a></h2>
+<p>A process running a zoof.ui app hosts a webserver, at a specific port.
+The hostname and port number can be specified, otherwise the app is hosted
+at localhost and port X. If the default port cannot be used, the number
+is incremened until a free port is encountered.</p>
+<p>The app is hosted at <tt class="docutils literal"><span class="pre">http://hostname:port/AppName</span></tt>.</p>
+</div>
+<div class="section" id="multiple-apps">
+<h2>Multiple apps<a class="headerlink" href="#multiple-apps" title="Permalink to this headline">¶</a></h2>
+<p>You can define multiple app classes in your main script. You can even
+import app classes from another module. When you run <tt class="docutils literal"><span class="pre">ui.run()</span></tt>, the
+caller namespace is inspected for app classes, and all apps are hosted.</p>
+<p>The name of an app corresponds to the class name
+(i.e. <tt class="docutils literal"><span class="pre">SomeApp.__class__.__name__</span></tt>).</p>
+</div>
+<div class="section" id="interactive-use">
+<h2>Interactive use<a class="headerlink" href="#interactive-use" title="Permalink to this headline">¶</a></h2>
+<p>In The IPython notebook you can instantiate an app to make it appear
+inline. Also, note that there is no need for <tt class="docutils literal"><span class="pre">ui.run()</span></tt>
+in the IPython notebook. NOT YET IMPLEMENTED</p>
+<p>In the IEP IDE, with the Tornado event loop integrated, <tt class="docutils literal"><span class="pre">ui.run()</span></tt> is
+also not necessary (it will immediately return). The server will run
+though, and you can dynamically add and/or modify elements on the
+<tt class="docutils literal"><span class="pre">app</span></tt> instance.</p>
+<p>Maybe, we will also add some sort of default app, so that you won&#8217;t need to create
+an App class in order to show a single slider. We&#8217;ll have to see how that
+works out...</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">I&#8217;m still rather new to web stuff. I thought the mechanisms outlined
+above would be useful. But some ideas might not make a lot of sense.
+Therefore, any of the above may change.</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+
+  <div class="container">
+    <ul class="list-inline">
+      <li class="pull-right"><a href="#">Back to top</a></li>
+    </ul>
+    <ul class="list-unstyled small">
+      <li>Copyright <i class='fa fa-copyright'></i> 2014 Almar Klein</li>
+      <li>Code licensed under
+        <a href="http://opensource.org/licenses/BSD-2-Clause">BSD license</a>,
+        website and documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0 </a>
+      </li>
+      <!--
+      <li>
+        Made with <a href="http://sphinx-doc.org">sphinx</a> using the excellent
+        <a href="https://github.com/ryan-roemer/sphinx-bootstrap-theme">bootstrap theme</a>
+      </li>
+      -->
+    </ul>
+  </div>
+</footer>
+  </body>
+</html>
