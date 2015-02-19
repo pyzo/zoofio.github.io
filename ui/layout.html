@@ -143,15 +143,16 @@ be resized.</p>
 <h2>No layout<a class="headerlink" href="#no-layout" title="Permalink to this headline">¶</a></h2>
 <p>Let&#8217;s start by looking at what would happen without any layout. We just
 create an app with three buttons.</p>
-<pre style='font-size:small;'>
-from zoof import ui
-class MyApp(ui.App):
-    def init(self):
-        self.b1 = ui.Button(self, 'Hello world')
-        self.b2 = ui.Button(self, 'Foo')
-        self.b3 = ui.Button(self, 'Bar')
-</pre>
-<a target='new' href='example580af29007e60a2d7bc04f3d8bc59bb0.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 600px; height: 100px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe style='width: 100%; height: 100%; border: 2px solid #094; ' src='example580af29007e60a2d7bc04f3d8bc59bb0.html'>iframe not supported</iframe></div><br /><p>What happens is that this is HTML, so the buttons will simply be placed
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">zoof</span> <span class="kn">import</span> <span class="n">ui</span>
+
+<span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">ui</span><span class="o">.</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b1</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;Hello world&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b2</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;Foo&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b3</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;Bar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<a target='new' href='example92274f255ee81219638a819459ad2956.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 500px; height: 100px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe src='example92274f255ee81219638a819459ad2956.html' style='width: 100%; height: 100%; border: 2px solid #094;'>iframe not supported</iframe></div><br /><p>What happens is that this is HTML, so the buttons will simply be placed
 after each-other until they no longer fit on one row. By applying
 appropriate styling you can make them each appear on a line, or e.g.
 <tt class="docutils literal"><span class="pre">float:</span> <span class="pre">left</span></tt>. But real GUI-like layout is best done using actual
@@ -162,17 +163,17 @@ layout classes!</p>
 <p>With the <cite>HBox</cite> class, you can layout widgets horizontally. Note the use of
 the flex argument. It determines how the widget is stretched. A flex of 0
 means to not stretch, but use the minimal sensible width.</p>
-<pre style='font-size:small;'>
-from zoof import ui
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">zoof</span> <span class="kn">import</span> <span class="n">ui</span>
 
-class MyApp(ui.App):
-    def init(self):
-        with ui.HBox(self):
-            self.b1 = ui.Button(text='Hola', flex=0)
-            self.b2 = ui.Button(text='Hello world', flex=1)
-            self.b3 = ui.Button(text='Foo bar', flex=2)
-</pre>
-<a target='new' href='example3be3bcafd0fd0575663d0234721c4eee.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 600px; height: 100px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe style='width: 100%; height: 100%; border: 2px solid #094; ' src='example3be3bcafd0fd0575663d0234721c4eee.html'>iframe not supported</iframe></div><br /><p>You can see how the layout is used as context manager. Inside this
+<span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">ui</span><span class="o">.</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">HBox</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b1</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Hola&#39;</span><span class="p">,</span> <span class="n">flex</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b2</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Hello world&#39;</span><span class="p">,</span> <span class="n">flex</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b3</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Foo bar&#39;</span><span class="p">,</span> <span class="n">flex</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<a target='new' href='examplef917dedd14016e62b6e19a7a7e27caa7.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 500px; height: 100px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe src='examplef917dedd14016e62b6e19a7a7e27caa7.html' style='width: 100%; height: 100%; border: 2px solid #094;'>iframe not supported</iframe></div><br /><p>You can see how the layout is used as context manager. Inside this
 context, the elements do not have to specify the parent, since the
 layout automatically becomes the parent. A nice side-effect is that the
 source gets structured in a way that reflects the structure of the
@@ -180,32 +181,32 @@ elements.</p>
 <p>The <cite>VBox</cite> class is similar to the <cite>HBox</cite>, except now the widgets are
 aligned vertically. Note how we don&#8217;t specify a flex here, effectively
 giving the buttons a flex of 0.</p>
-<pre style='font-size:small;'>
-from zoof import ui
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">zoof</span> <span class="kn">import</span> <span class="n">ui</span>
 
-class MyApp(ui.App):
-    def init(self):
-        with ui.VBox(self):
-            self.b1 = ui.Button(text='Hola')
-            self.b2 = ui.Button(text='Hello world')
-            self.b3 = ui.Button(text='Foo bar')
-            ui.Widget(flex=1)
-</pre>
-<a target='new' href='example4403d300085cfa723b6447c6576fd3d7.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 600px; height: 100px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe style='width: 100%; height: 100%; border: 2px solid #094; ' src='example4403d300085cfa723b6447c6576fd3d7.html'>iframe not supported</iframe></div><br /><p>In the above app, we use an empty widget as a spacer. This is because
+<span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">ui</span><span class="o">.</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">VBox</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b1</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Hola&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b2</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Hello world&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b3</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Foo bar&#39;</span><span class="p">)</span>
+            <span class="n">ui</span><span class="o">.</span><span class="n">Widget</span><span class="p">(</span><span class="n">flex</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<a target='new' href='example0cf7c21826387979406a8ac911139606.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 500px; height: 100px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe src='example0cf7c21826387979406a8ac911139606.html' style='width: 100%; height: 100%; border: 2px solid #094;'>iframe not supported</iframe></div><br /><p>In the above app, we use an empty widget as a spacer. This is because
 the VBox and HBox always want to fill their space. If we would not put
 the stub widged at the end, all elements would be stretched to fill up
 the whole space.</p>
-<pre style='font-size:small;'>
-from zoof import ui
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">zoof</span> <span class="kn">import</span> <span class="n">ui</span>
 
-class MyApp(ui.App):
-    def init(self):
-        with ui.VBox(self):
-            self.b1 = ui.Button(text='Hola')
-            self.b2 = ui.Button(text='Hello world')
-            self.b3 = ui.Button(text='Foo bar')
-</pre>
-<a target='new' href='exampleb5baf66b4b4aa6a14630c998cbaf6833.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 600px; height: 100px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe style='width: 100%; height: 100%; border: 2px solid #094; ' src='exampleb5baf66b4b4aa6a14630c998cbaf6833.html'>iframe not supported</iframe></div><br /><p>One difference you can observe between HBox and VBox is that the
+<span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">ui</span><span class="o">.</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">VBox</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b1</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Hola&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b2</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Hello world&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b3</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Foo bar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<a target='new' href='example075c6685593325fa750166088afd346b.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 500px; height: 100px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe src='example075c6685593325fa750166088afd346b.html' style='width: 100%; height: 100%; border: 2px solid #094;'>iframe not supported</iframe></div><br /><p>One difference you can observe between HBox and VBox is that the
 elements in the VBox get fully stretched horizontally, while the elements
 in a HBox do <em>not</em> get stretched vertically. This is because elements
 (e.g. buttons) still look ok when they are wider than necessary, but look
@@ -215,41 +216,41 @@ layout to influence this behavior.</p>
 some possible variations. Also note how this syntax for writing out the
 layout leads to a clear structure that corresponds to how the the
 widgets are organized.</p>
-<pre style='font-size:small;'>
-from zoof import ui
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">zoof</span> <span class="kn">import</span> <span class="n">ui</span>
 
-class MyApp(ui.App):
-    def init(self):
-        with ui.VBox(self):
+<span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">ui</span><span class="o">.</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">VBox</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
-            ui.Label(text='Flex 0 0 0')
-            with ui.HBox(flex=0):
-                self.b1 = ui.Button(text='Hola', flex=0)
-                self.b2 = ui.Button(text='Hello world', flex=0)
-                self.b3 = ui.Button(text='Foo bar', flex=0)
+            <span class="n">ui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Flex 0 0 0&#39;</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">HBox</span><span class="p">(</span><span class="n">flex</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">b1</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Hola&#39;</span><span class="p">,</span> <span class="n">flex</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">b2</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Hello world&#39;</span><span class="p">,</span> <span class="n">flex</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">b3</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Foo bar&#39;</span><span class="p">,</span> <span class="n">flex</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-            ui.Label(text='Flex 1 0 3')
-            with ui.HBox(flex=0):
-                self.b1 = ui.Button(text='Hola', flex=1)
-                self.b2 = ui.Button(text='Hello world', flex=0)
-                self.b3 = ui.Button(text='Foo bar', flex=3)
+            <span class="n">ui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Flex 1 0 3&#39;</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">HBox</span><span class="p">(</span><span class="n">flex</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">b1</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Hola&#39;</span><span class="p">,</span> <span class="n">flex</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">b2</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Hello world&#39;</span><span class="p">,</span> <span class="n">flex</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">b3</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Foo bar&#39;</span><span class="p">,</span> <span class="n">flex</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
-            ui.Label(text='margin 10 (around layout)')
-            with ui.HBox(flex=0, margin=10):
-                self.b1 = ui.Button(text='Hola')
-                self.b2 = ui.Button(text='Hello world')
-                self.b3 = ui.Button(text='Foo bar')
+            <span class="n">ui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;margin 10 (around layout)&#39;</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">HBox</span><span class="p">(</span><span class="n">flex</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">b1</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Hola&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">b2</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Hello world&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">b3</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Foo bar&#39;</span><span class="p">)</span>
 
-            ui.Label(text='spacing 10 (inter-widget)')
-            with ui.HBox(flex=0, spacing=10):
-                self.b1 = ui.Button(text='Hola')
-                self.b2 = ui.Button(text='Hello world')
-                self.b3 = ui.Button(text='Foo bar')
+            <span class="n">ui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;spacing 10 (inter-widget)&#39;</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">HBox</span><span class="p">(</span><span class="n">flex</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">b1</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Hola&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">b2</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Hello world&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">b3</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Foo bar&#39;</span><span class="p">)</span>
 
-            ui.Widget(flex=1)
-            ui.Label(text='Note the spacer Widget above')
-</pre>
-<a target='new' href='exampled7c935a7fb27dd838ede3647a14fe631.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 600px; height: 300px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe style='width: 100%; height: 100%; border: 2px solid #094; ' src='exampled7c935a7fb27dd838ede3647a14fe631.html'>iframe not supported</iframe></div><br /></div>
+            <span class="n">ui</span><span class="o">.</span><span class="n">Widget</span><span class="p">(</span><span class="n">flex</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">ui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Note the spacer Widget above&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<a target='new' href='example564e6d5fbf56de71d43deac586974070.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 500px; height: 300px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe src='example564e6d5fbf56de71d43deac586974070.html' style='width: 100%; height: 100%; border: 2px solid #094;'>iframe not supported</iframe></div><br /></div>
 <div class="section" id="form">
 <h2>Form<a class="headerlink" href="#form" title="Permalink to this headline">¶</a></h2>
 <p>The Form layout is a specific case of the Grid layout (which will be
@@ -260,21 +261,21 @@ is placed on a row. The left row has an implicit flex of zero, and the right
 row an implicit flex of 1. To not stretch the rows, we add a simple stretcher
 element at the end. In the Form layout, the specified flex applies to
 the vertical direction.</p>
-<pre style='font-size:small;'>
-from zoof import ui
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">zoof</span> <span class="kn">import</span> <span class="n">ui</span>
 
-class MyApp(ui.App):
-    def init(self):
-        with ui.Form(self):
-            ui.Label(text='Pet name:')
-            self.b1 = ui.Button(text='Hola')
-            ui.Label(text='Pet Age:')
-            self.b2 = ui.Button(text='Hello world')
-            ui.Label(text='Pet\'s Favorite color:')
-            self.b3 = ui.Button(text='Foo bar')
-            ui.Widget(flex=1)
-</pre>
-<a target='new' href='example74f1402e87328d831bcd04ae525bda09.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 600px; height: 200px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe style='width: 100%; height: 100%; border: 2px solid #094; ' src='example74f1402e87328d831bcd04ae525bda09.html'>iframe not supported</iframe></div><br /></div>
+<span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">ui</span><span class="o">.</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">Form</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">ui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Pet name:&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b1</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Hola&#39;</span><span class="p">)</span>
+            <span class="n">ui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Pet Age:&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b2</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Hello world&#39;</span><span class="p">)</span>
+            <span class="n">ui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Pet</span><span class="se">\&#39;</span><span class="s">s Favorite color:&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b3</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Foo bar&#39;</span><span class="p">)</span>
+            <span class="n">ui</span><span class="o">.</span><span class="n">Widget</span><span class="p">(</span><span class="n">flex</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<a target='new' href='example6085ac9e329a36082c4ffd019369fbd2.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 500px; height: 200px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe src='example6085ac9e329a36082c4ffd019369fbd2.html' style='width: 100%; height: 100%; border: 2px solid #094;'>iframe not supported</iframe></div><br /></div>
 <div class="section" id="grid">
 <h2>Grid<a class="headerlink" href="#grid" title="Permalink to this headline">¶</a></h2>
 <p>The Grid layout provides a way to layout elements in a grid. It is quite
@@ -285,19 +286,19 @@ here&#8217;s how Grid works.</p>
 that specify the position within the grid to place the element. Flex
 values can also be given, but here they are tuples: they specify the
 flex for width and height, respectively.</p>
-<pre style='font-size:small;'>
-from zoof import ui
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">zoof</span> <span class="kn">import</span> <span class="n">ui</span>
 
-class MyApp(ui.App):
-    def init(self):
-        with ui.Grid(self):
-            self.b1 = ui.Button(text='No flex', pos=(0, 0))
-            self.b2 = ui.Button(text='Hola', pos=(1, 1), flex=(1, 1))
-            self.b3 = ui.Button(text='Hello world', pos=(2, 2), flex=(2, 1))
-            self.b4 = ui.Button(text='Foo bar', pos=(4, 4), flex=(1, 2))
-            self.b5 = ui.Button(text='no flex again', pos=(5, 5))
-</pre>
-<a target='new' href='example10933e1e4e874311023651b7a669a7bb.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 600px; height: 300px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe style='width: 100%; height: 100%; border: 2px solid #094; ' src='example10933e1e4e874311023651b7a669a7bb.html'>iframe not supported</iframe></div><br /></div>
+<span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">ui</span><span class="o">.</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">Grid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b1</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;No flex&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b2</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Hola&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">flex</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b3</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Hello world&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">flex</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b4</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Foo bar&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">flex</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b5</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;no flex again&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+<a target='new' href='examplecf1b97420de3a491ae6779d13d74f631.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 500px; height: 300px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe src='examplecf1b97420de3a491ae6779d13d74f631.html' style='width: 100%; height: 100%; border: 2px solid #094;'>iframe not supported</iframe></div><br /></div>
 <div class="section" id="pinboard">
 <h2>PinBoard<a class="headerlink" href="#pinboard" title="Permalink to this headline">¶</a></h2>
 <p><em>Name is subject to change</em></p>
@@ -306,17 +307,17 @@ are given a certain position and that&#8217;s where they&#8217;ll be. The positi
 must be specified via the <cite>pos</cite> argument. When it is larger than 1, it
 is in pixels. When it is smaller than 1, it is regarded a fractional
 position (i.e. as in a percentage of the parent size).</p>
-<pre style='font-size:small;'>
-from zoof import ui
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">zoof</span> <span class="kn">import</span> <span class="n">ui</span>
 
-class MyApp(ui.App):
-    def init(self):
-        with ui.PinBoard(self):
-            self.b1 = ui.Button(text='Stuck at (20, 20)', pos=(20, 30))
-            self.b2 = ui.Button(text='Dynamic at (20%, 20%)', pos=(0.2, 0.2))
-            self.b3 = ui.Button(text='Dynamic at (50%, 70%)', pos=(0.5, 0.7))
-</pre>
-<a target='new' href='examplea7cf52802acec2deb1daa8f301c05a7f.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 600px; height: 300px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe style='width: 100%; height: 100%; border: 2px solid #094; ' src='examplea7cf52802acec2deb1daa8f301c05a7f.html'>iframe not supported</iframe></div><br /><br /><br /><br /><br /><br /></div>
+<span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">ui</span><span class="o">.</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">PinBoard</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b1</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Stuck at (20, 20)&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b2</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Dynamic at (20%, 20%)&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b3</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Dynamic at (50%, 70%)&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">))</span>
+</pre></div>
+</div>
+<a target='new' href='example4d344986eea083d665ec230719cf15c1.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 500px; height: 300px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe src='example4d344986eea083d665ec230719cf15c1.html' style='width: 100%; height: 100%; border: 2px solid #094;'>iframe not supported</iframe></div><br /><br /><br /><br /><br /><br /></div>
 </div>
 
 

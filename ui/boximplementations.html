@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Zoof.ui &mdash; the interactive IDE for dynamic languages</title>
+    <title>Box implementations &mdash; the interactive IDE for dynamic languages</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -84,7 +84,18 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Zoof.ui</a></li>
+<li><a class="reference internal" href="#">Box implementations</a><ul>
+<li><a class="reference internal" href="#the-implementations">The implementations</a><ul>
+<li><a class="reference internal" href="#table">Table</a></li>
+<li><a class="reference internal" href="#box">Box</a></li>
+<li><a class="reference internal" href="#flex">Flex</a></li>
+<li><a class="reference internal" href="#phosphor">Phosphor</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#test-pages">Test pages</a></li>
+<li><a class="reference internal" href="#results">Results</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -118,38 +129,63 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="zoof-ui">
-<h1>Zoof.ui<a class="headerlink" href="#zoof-ui" title="Permalink to this headline">¶</a></h1>
-<p><tt class="docutils literal"><span class="pre">zoof.ui</span></tt> is an <em>experimental</em> GUI framework that uses web technology to
-create rich apps in a Pythonic way. It can create standalone desktop
-applications, as well as host (multi-user) web apps.</p>
-<p>This code is currently developed as part of the Zoof project,
-but should probably have its own repo at some point.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="app.html">Applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="app.html#desktop-app-or-web-app">Desktop app or web app?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="app.html#creating-an-app">Creating an app</a></li>
-<li class="toctree-l2"><a class="reference internal" href="app.html#how-is-the-app-hosted">How is the app hosted?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="app.html#multiple-apps">Multiple apps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="app.html#interactive-use">Interactive use</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="layout.html">Layout</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="layout.html#no-layout">No layout</a></li>
-<li class="toctree-l2"><a class="reference internal" href="layout.html#hbox-and-vbox">HBox and VBox</a></li>
-<li class="toctree-l2"><a class="reference internal" href="layout.html#form">Form</a></li>
-<li class="toctree-l2"><a class="reference internal" href="layout.html#grid">Grid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="layout.html#pinboard">PinBoard</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="boximplementations.html">Box implementations</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="boximplementations.html#the-implementations">The implementations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="boximplementations.html#test-pages">Test pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="boximplementations.html#results">Results</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="box-implementations">
+<h1>Box implementations<a class="headerlink" href="#box-implementations" title="Permalink to this headline">¶</a></h1>
+<p>This section provides links to different implementations of HBox and VBox.
+This is an experiment to put the implementations side-by side and
+test their performance.</p>
+<p>Each implementation comes in two versions: one simple version in the form
+of one hbox with 3 elements, and one more complex version that consists
+of an hbox with two vboxes that each have 4 hboxes with 3 elements.
+The latter is thus an example of deep nesting as you might find in
+more complex GUI&#8217;s.</p>
+<div class="section" id="the-implementations">
+<h2>The implementations<a class="headerlink" href="#the-implementations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="table">
+<h3>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h3>
+<p>The curren <tt class="docutils literal"><span class="pre">zoof.ui</span></tt> implements hbox and vbox using a table. The
+advantage is that the html table can already do much of the layout,
+especially for the horizontal direction. In the vertical direction it
+needs some help with a bit of JS.</p>
+</div>
+<div class="section" id="box">
+<h3>Box<a class="headerlink" href="#box" title="Permalink to this headline">¶</a></h3>
+<p>This is the <tt class="docutils literal"><span class="pre">display:</span> <span class="pre">box</span></tt> model from 2009. Most browsers seem to
+implement it, but it&#8217;s sort of deprecated.</p>
+</div>
+<div class="section" id="flex">
+<h3>Flex<a class="headerlink" href="#flex" title="Permalink to this headline">¶</a></h3>
+<p>This is the <tt class="docutils literal"><span class="pre">display:</span> <span class="pre">flex</span></tt> model, which supsersedes the <tt class="docutils literal"><span class="pre">display:</span>
+<span class="pre">box</span></tt>. It is the latest iteration of the flexbox model. Still in draft,
+I think.</p>
+</div>
+<div class="section" id="phosphor">
+<h3>Phosphor<a class="headerlink" href="#phosphor" title="Permalink to this headline">¶</a></h3>
+<p>PhosphorJS is a WIP by Chris Colbert
+(<a class="reference external" href="https://github.com/phosphorjs/phosphor-ui">https://github.com/phosphorjs/phosphor-ui</a>) that basically does all the layout
+in JS.</p>
+</div>
+</div>
+<div class="section" id="test-pages">
+<h2>Test pages<a class="headerlink" href="#test-pages" title="Permalink to this headline">¶</a></h2>
+<p>Here&#8217;s a list with the test pages. Open them in a new window and do a
+continous resize. FPS is shown.</p>
+<a href='../_static/boxdemos/boxdemo_table1.html'> Table simple </a> and
+<a href='../_static/boxdemos/boxdemo_table2.html'> Table nested </a> <br/>
+
+<a href='../_static/boxdemos/boxdemo_box1.html'> Box simple </a> and
+<a href='../_static/boxdemos/boxdemo_box2.html'> Box nested </a> <br/>
+
+<a href='../_static/boxdemos/boxdemo_flex1.html'> Flex simple </a> and
+<a href='../_static/boxdemos/boxdemo_flex2.html'> Flex nested </a> <br/>
+
+<a href='../_static/boxdemos/boxdemo_phosphor1.html'> Phosphor simple </a> and
+<a href='../_static/boxdemos/boxdemo_phosphor2.html'> Phosphor nested </a> <br/></div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<p>I tested the pages for compliance (do they actually show what they&#8217;re
+supposed to show?) and performance (how much FPS do I get when I
+resize?). Here are the results for some systems.</p>
 </div>
 </div>
 

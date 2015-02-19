@@ -24,6 +24,7 @@ create an app with three buttons.
 .. UIExample:: 100
     
     from zoof import ui
+    
     class MyApp(ui.App):
         def init(self):
             self.b1 = ui.Button(self, 'Hello world')
