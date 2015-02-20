@@ -96,15 +96,15 @@ body {
         zoof.isExported = true;
         
         zoof.runExportedApp = function () {
-            zoof.command('ICON 7f7ab247f208.ico');
+            zoof.command('ICON 7f79eeaa41d0.ico');
             zoof.command('TITLE Zoof app');
-            zoof.command('EXEC zoof.createHBox({"hflex": 0, "margin": "0px", "className": "zf-hbox zf-layout zf-widget", "parent": "body", "pos": [0, 0], "spacing": "0px", "id": "HBox1", "vflex": 0});');
+            zoof.command('EXEC zoof.createHBox({"hflex": 0, "pos": [0, 0], "spacing": "0px", "parent": "body", "margin": "0px", "className": "zf-hbox zf-layout zf-widget", "vflex": 0, "id": "HBox1"});');
             zoof.command('EXEC zoof.setProps("HBox1", "flex", (0, 0));');
-            zoof.command('EXEC zoof.createButton({"hflex": 0, "parent": "HBox1", "className": "zf-button zf-widget", "pos": [0, 0], "text": "Hola", "id": "Button2", "vflex": 0});');
+            zoof.command('EXEC zoof.createButton({"hflex": 0, "pos": [0, 0], "parent": "HBox1", "id": "Button2", "className": "zf-button zf-widget", "vflex": 0, "text": "Hola"});');
             zoof.command('EXEC zoof.setProps("Button2", "flex", (0, 0));');
-            zoof.command('EXEC zoof.createButton({"hflex": 1, "parent": "HBox1", "className": "zf-button zf-widget", "pos": [0, 0], "text": "Hello world", "id": "Button3", "vflex": 1});');
+            zoof.command('EXEC zoof.createButton({"hflex": 1, "pos": [0, 0], "parent": "HBox1", "id": "Button3", "className": "zf-button zf-widget", "vflex": 1, "text": "Hello world"});');
             zoof.command('EXEC zoof.setProps("Button3", "flex", (1, 1));');
-            zoof.command('EXEC zoof.createButton({"hflex": 2, "parent": "HBox1", "className": "zf-button zf-widget", "pos": [0, 0], "text": "Foo bar", "id": "Button4", "vflex": 2});');
+            zoof.command('EXEC zoof.createButton({"hflex": 2, "pos": [0, 0], "parent": "HBox1", "id": "Button4", "className": "zf-button zf-widget", "vflex": 2, "text": "Foo bar"});');
             zoof.command('EXEC zoof.setProps("Button4", "flex", (2, 2));');
             zoof.command("EXEC zoof.get('HBox1').applyLayout();");
         };
