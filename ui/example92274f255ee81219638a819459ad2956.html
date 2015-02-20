@@ -96,13 +96,13 @@ body {
         zoof.isExported = true;
         
         zoof.runExportedApp = function () {
-            zoof.command('ICON 7f5052294d68.ico');
+            zoof.command('ICON 7f4ddbdf0358.ico');
             zoof.command('TITLE Zoof app');
-            zoof.command('EXEC zoof.createButton({"className": "zf-button zf-widget", "vflex": 0, "hflex": 0, "pos": [0, 0], "id": "Button1", "parent": "body", "text": "Hello world"});');
+            zoof.command('EXEC zoof.createButton({"hflex": 0, "className": "zf-button zf-widget", "vflex": 0, "parent": "body", "id": "Button1", "text": "Hello world", "pos": [0, 0]});');
             zoof.command('EXEC zoof.setProps("Button1", "flex", (0, 0));');
-            zoof.command('EXEC zoof.createButton({"className": "zf-button zf-widget", "vflex": 0, "hflex": 0, "pos": [0, 0], "id": "Button2", "parent": "body", "text": "Foo"});');
+            zoof.command('EXEC zoof.createButton({"hflex": 0, "className": "zf-button zf-widget", "vflex": 0, "parent": "body", "id": "Button2", "text": "Foo", "pos": [0, 0]});');
             zoof.command('EXEC zoof.setProps("Button2", "flex", (0, 0));');
-            zoof.command('EXEC zoof.createButton({"className": "zf-button zf-widget", "vflex": 0, "hflex": 0, "pos": [0, 0], "id": "Button3", "parent": "body", "text": "Bar"});');
+            zoof.command('EXEC zoof.createButton({"hflex": 0, "className": "zf-button zf-widget", "vflex": 0, "parent": "body", "id": "Button3", "text": "Bar", "pos": [0, 0]});');
             zoof.command('EXEC zoof.setProps("Button3", "flex", (0, 0));');
         };
     </script>
