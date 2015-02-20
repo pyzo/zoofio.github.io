@@ -96,23 +96,23 @@ body {
         zoof.isExported = true;
         
         zoof.runExportedApp = function () {
-            zoof.command('ICON 7f79ee842fd0.ico');
+            zoof.command('ICON 7f5051498dd8.ico');
             zoof.command('TITLE Zoof app');
-            zoof.command('EXEC zoof.createForm({"hflex": 0, "pos": [0, 0], "spacing": "0px", "parent": "body", "margin": "0px", "className": "zf-form zf-layout zf-widget", "vflex": 0, "id": "Form1"});');
+            zoof.command('EXEC zoof.createForm({"className": "zf-form zf-layout zf-widget", "vflex": 0, "hflex": 0, "pos": [0, 0], "id": "Form1", "margin": "0px", "spacing": "0px", "parent": "body"});');
             zoof.command('EXEC zoof.setProps("Form1", "flex", (0, 0));');
-            zoof.command('EXEC zoof.createLabel({"hflex": 0, "pos": [0, 0], "parent": "Form1", "id": "Label2", "className": "zf-label zf-widget", "vflex": 0, "text": "Pet name:"});');
+            zoof.command('EXEC zoof.createLabel({"className": "zf-label zf-widget", "vflex": 0, "hflex": 0, "pos": [0, 0], "id": "Label2", "parent": "Form1", "text": "Pet name:"});');
             zoof.command('EXEC zoof.setProps("Label2", "flex", (0, 0));');
-            zoof.command('EXEC zoof.createButton({"hflex": 0, "pos": [0, 0], "parent": "Form1", "id": "Button3", "className": "zf-button zf-widget", "vflex": 0, "text": "Hola"});');
+            zoof.command('EXEC zoof.createButton({"className": "zf-button zf-widget", "vflex": 0, "hflex": 0, "pos": [0, 0], "id": "Button3", "parent": "Form1", "text": "Hola"});');
             zoof.command('EXEC zoof.setProps("Button3", "flex", (0, 0));');
-            zoof.command('EXEC zoof.createLabel({"hflex": 0, "pos": [0, 0], "parent": "Form1", "id": "Label4", "className": "zf-label zf-widget", "vflex": 0, "text": "Pet Age:"});');
+            zoof.command('EXEC zoof.createLabel({"className": "zf-label zf-widget", "vflex": 0, "hflex": 0, "pos": [0, 0], "id": "Label4", "parent": "Form1", "text": "Pet Age:"});');
             zoof.command('EXEC zoof.setProps("Label4", "flex", (0, 0));');
-            zoof.command('EXEC zoof.createButton({"hflex": 0, "pos": [0, 0], "parent": "Form1", "id": "Button5", "className": "zf-button zf-widget", "vflex": 0, "text": "Hello world"});');
+            zoof.command('EXEC zoof.createButton({"className": "zf-button zf-widget", "vflex": 0, "hflex": 0, "pos": [0, 0], "id": "Button5", "parent": "Form1", "text": "Hello world"});');
             zoof.command('EXEC zoof.setProps("Button5", "flex", (0, 0));');
-            zoof.command('EXEC zoof.createLabel({"hflex": 0, "pos": [0, 0], "parent": "Form1", "id": "Label6", "className": "zf-label zf-widget", "vflex": 0, "text": "Pet\'s Favorite color:"});');
+            zoof.command('EXEC zoof.createLabel({"className": "zf-label zf-widget", "vflex": 0, "hflex": 0, "pos": [0, 0], "id": "Label6", "parent": "Form1", "text": "Pet\'s Favorite color:"});');
             zoof.command('EXEC zoof.setProps("Label6", "flex", (0, 0));');
-            zoof.command('EXEC zoof.createButton({"hflex": 0, "pos": [0, 0], "parent": "Form1", "id": "Button7", "className": "zf-button zf-widget", "vflex": 0, "text": "Foo bar"});');
+            zoof.command('EXEC zoof.createButton({"className": "zf-button zf-widget", "vflex": 0, "hflex": 0, "pos": [0, 0], "id": "Button7", "parent": "Form1", "text": "Foo bar"});');
             zoof.command('EXEC zoof.setProps("Button7", "flex", (0, 0));');
-            zoof.command('EXEC zoof.createWidget({"hflex": 1, "pos": [0, 0], "parent": "Form1", "id": "Widget8", "className": "zf-widget", "vflex": 1});');
+            zoof.command('EXEC zoof.createWidget({"className": "zf-widget", "vflex": 1, "hflex": 1, "pos": [0, 0], "id": "Widget8", "parent": "Form1"});');
             zoof.command('EXEC zoof.setProps("Widget8", "flex", (1, 1));');
             zoof.command("EXEC zoof.get('Form1').applyLayout();");
         };

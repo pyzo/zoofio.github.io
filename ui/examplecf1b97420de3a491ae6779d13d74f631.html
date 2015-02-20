@@ -96,19 +96,19 @@ body {
         zoof.isExported = true;
         
         zoof.runExportedApp = function () {
-            zoof.command('ICON 7f79ee842860.ico');
+            zoof.command('ICON 7f50514aeb38.ico');
             zoof.command('TITLE Zoof app');
-            zoof.command('EXEC zoof.createGrid({"hflex": 0, "pos": [0, 0], "spacing": "0px", "parent": "body", "margin": "0px", "className": "zf-grid zf-layout zf-widget", "vflex": 0, "id": "Grid1"});');
+            zoof.command('EXEC zoof.createGrid({"className": "zf-grid zf-layout zf-widget", "vflex": 0, "hflex": 0, "pos": [0, 0], "id": "Grid1", "margin": "0px", "spacing": "0px", "parent": "body"});');
             zoof.command('EXEC zoof.setProps("Grid1", "flex", (0, 0));');
-            zoof.command('EXEC zoof.createButton({"hflex": 0, "pos": [0, 0], "parent": "Grid1", "id": "Button2", "className": "zf-button zf-widget", "vflex": 0, "text": "No flex"});');
+            zoof.command('EXEC zoof.createButton({"className": "zf-button zf-widget", "vflex": 0, "hflex": 0, "pos": [0, 0], "id": "Button2", "parent": "Grid1", "text": "No flex"});');
             zoof.command('EXEC zoof.setProps("Button2", "flex", (0, 0));');
-            zoof.command('EXEC zoof.createButton({"hflex": 1, "pos": [1, 1], "parent": "Grid1", "id": "Button3", "className": "zf-button zf-widget", "vflex": 1, "text": "Hola"});');
+            zoof.command('EXEC zoof.createButton({"className": "zf-button zf-widget", "vflex": 1, "hflex": 1, "pos": [1, 1], "id": "Button3", "parent": "Grid1", "text": "Hola"});');
             zoof.command('EXEC zoof.setProps("Button3", "flex", (1, 1));');
-            zoof.command('EXEC zoof.createButton({"hflex": 2, "pos": [2, 2], "parent": "Grid1", "id": "Button4", "className": "zf-button zf-widget", "vflex": 1, "text": "Hello world"});');
+            zoof.command('EXEC zoof.createButton({"className": "zf-button zf-widget", "vflex": 1, "hflex": 2, "pos": [2, 2], "id": "Button4", "parent": "Grid1", "text": "Hello world"});');
             zoof.command('EXEC zoof.setProps("Button4", "flex", (2, 1));');
-            zoof.command('EXEC zoof.createButton({"hflex": 1, "pos": [4, 4], "parent": "Grid1", "id": "Button5", "className": "zf-button zf-widget", "vflex": 2, "text": "Foo bar"});');
+            zoof.command('EXEC zoof.createButton({"className": "zf-button zf-widget", "vflex": 2, "hflex": 1, "pos": [4, 4], "id": "Button5", "parent": "Grid1", "text": "Foo bar"});');
             zoof.command('EXEC zoof.setProps("Button5", "flex", (1, 2));');
-            zoof.command('EXEC zoof.createButton({"hflex": 0, "pos": [5, 5], "parent": "Grid1", "id": "Button6", "className": "zf-button zf-widget", "vflex": 0, "text": "no flex again"});');
+            zoof.command('EXEC zoof.createButton({"className": "zf-button zf-widget", "vflex": 0, "hflex": 0, "pos": [5, 5], "id": "Button6", "parent": "Grid1", "text": "no flex again"});');
             zoof.command('EXEC zoof.setProps("Button6", "flex", (0, 0));');
             zoof.command("EXEC zoof.get('Grid1').applyLayout();");
         };
