@@ -54,7 +54,7 @@ var timer = {
             var elapsed = (now - (this.elapsed[0] || now)) / 1000;
             var fps = Math.round(this.elapsed.length / elapsed);
             //console.log(fps);
-            document.getElementById('fps').innerHTML = fps + ' FPS (P)';
+            document.getElementById('fps').innerHTML = fps + ' FPS (T)';
         }
     },
     start: function (now) {
