@@ -14,16 +14,16 @@
         zoof.isExported = true;
         
         zoof.runExportedApp = function () {
-            zoof.command('ICON 7f9113c34a90.ico');
+            zoof.command('ICON 7f776112b748.ico');
             zoof.command('TITLE Zoof app');
-            zoof.command('EXEC zoof.createPinBoard({"pos": [0, 0], "margin": "0px", "vflex": 1, "hflex": 1, "id": "PinBoard1", "parent": "body", "spacing": "0px", "className": "zf-pinboard zf-layout zf-widget"});');
-            zoof.command('EXEC zoof.setProps("PinBoard1", "flex", (1, 1));');
-            zoof.command('EXEC zoof.createButton({"pos": [20, 30], "vflex": 1, "hflex": 1, "id": "Button2", "text": "Stuck at (20, 20)", "parent": "PinBoard1", "className": "zf-button zf-widget"});');
-            zoof.command('EXEC zoof.setProps("Button2", "flex", (1, 1));');
-            zoof.command('EXEC zoof.createButton({"pos": [0.2, 0.2], "vflex": 1, "hflex": 1, "id": "Button3", "text": "Dynamic at (20%, 20%)", "parent": "PinBoard1", "className": "zf-button zf-widget"});');
-            zoof.command('EXEC zoof.setProps("Button3", "flex", (1, 1));');
-            zoof.command('EXEC zoof.createButton({"pos": [0.5, 0.7], "vflex": 1, "hflex": 1, "id": "Button4", "text": "Dynamic at (50%, 70%)", "parent": "PinBoard1", "className": "zf-button zf-widget"});');
-            zoof.command('EXEC zoof.setProps("Button4", "flex", (1, 1));');
+            zoof.command('EXEC zoof.createPinBoard({"margin": "0px", "pos": [0, 0], "className": "zf-pinboard zf-layout zf-widget", "hflex": 0, "vflex": 0, "id": "PinBoard1", "parent": "body", "spacing": "0px"});');
+            zoof.command('EXEC zoof.setProps("PinBoard1", "flex", (0, 0));');
+            zoof.command('EXEC zoof.createButton({"pos": [20, 30], "className": "zf-button zf-widget", "text": "Stuck at (20, 20)", "hflex": 0, "vflex": 0, "id": "Button2", "parent": "PinBoard1"});');
+            zoof.command('EXEC zoof.setProps("Button2", "flex", (0, 0));');
+            zoof.command('EXEC zoof.createButton({"pos": [0.2, 0.2], "className": "zf-button zf-widget", "text": "Dynamic at (20%, 20%)", "hflex": 0, "vflex": 0, "id": "Button3", "parent": "PinBoard1"});');
+            zoof.command('EXEC zoof.setProps("Button3", "flex", (0, 0));');
+            zoof.command('EXEC zoof.createButton({"pos": [0.5, 0.7], "className": "zf-button zf-widget", "text": "Dynamic at (50%, 70%)", "hflex": 0, "vflex": 0, "id": "Button4", "parent": "PinBoard1"});');
+            zoof.command('EXEC zoof.setProps("Button4", "flex", (0, 0));');
             zoof.command("EXEC zoof.get('PinBoard1').applyLayout();");
         };
     </script>
