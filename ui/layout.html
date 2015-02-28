@@ -90,6 +90,7 @@
 <li><a class="reference internal" href="#form">Form</a></li>
 <li><a class="reference internal" href="#grid">Grid</a></li>
 <li><a class="reference internal" href="#pinboard">PinBoard</a></li>
+<li><a class="reference internal" href="#hsplit">HSplit</a></li>
 </ul>
 </li>
 </ul>
@@ -317,7 +318,23 @@ position (i.e. as in a percentage of the parent size).</p>
             <span class="bp">self</span><span class="o">.</span><span class="n">b3</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Dynamic at (50%, 70%)&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">))</span>
 </pre></div>
 </div>
-<a target='new' href='example4d344986eea083d665ec230719cf15c1.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 500px; height: 300px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe src='example4d344986eea083d665ec230719cf15c1.html' style='width: 100%; height: 100%; border: 2px solid #094;'>iframe not supported</iframe></div><br /><br /><br /><br /><br /><br /></div>
+<a target='new' href='example4d344986eea083d665ec230719cf15c1.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 500px; height: 300px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe src='example4d344986eea083d665ec230719cf15c1.html' style='width: 100%; height: 100%; border: 2px solid #094;'>iframe not supported</iframe></div><br /></div>
+<div class="section" id="hsplit">
+<h2>HSplit<a class="headerlink" href="#hsplit" title="Permalink to this headline">¶</a></h2>
+<p>The HSplit horizontally splits the available space in regions, which
+size can be set by the user by dragging the divider.</p>
+<p>At the moment, the splitter can only have two children, but eventually,
+it will be able to hold any number of children.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">zoof</span> <span class="kn">import</span> <span class="n">ui</span>
+
+<span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">ui</span><span class="o">.</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">HSplit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b1</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;At the left&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b2</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;At the right&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<a target='new' href='examplec92ef971855c7b912dcd12e6ecac24af.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 500px; height: 300px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe src='examplec92ef971855c7b912dcd12e6ecac24af.html' style='width: 100%; height: 100%; border: 2px solid #094;'>iframe not supported</iframe></div><br /></div>
 </div>
 
 

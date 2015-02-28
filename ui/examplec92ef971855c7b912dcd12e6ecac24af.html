@@ -14,14 +14,15 @@
         zoof.isExported = true;
         
         zoof.runExportedApp = function () {
-            zoof.command('ICON 7f0613781240.ico');
+            zoof.command('ICON 7f06128b6588.ico');
             zoof.command('TITLE Zoof app');
-            zoof.command('EXEC zoof.createButton({"hflex": 0, "className": "zf-button zf-widget", "id": "Button1", "parent": "body", "text": "Hello world", "vflex": 0, "pos": [0, 0]});');
-            zoof.command('EXEC zoof.setProps("Button1", "flex", (0, 0));');
-            zoof.command('EXEC zoof.createButton({"hflex": 0, "className": "zf-button zf-widget", "id": "Button2", "parent": "body", "text": "Foo", "vflex": 0, "pos": [0, 0]});');
+            zoof.command('EXEC zoof.createHSplit({"spacing": "0px", "hflex": 0, "className": "zf-hsplit zf-layout zf-widget", "id": "HSplit1", "parent": "body", "margin": "0px", "vflex": 0, "pos": [0, 0]});');
+            zoof.command('EXEC zoof.setProps("HSplit1", "flex", (0, 0));');
+            zoof.command('EXEC zoof.createButton({"hflex": 0, "className": "zf-button zf-widget", "id": "Button2", "parent": "HSplit1", "text": "At the left", "vflex": 0, "pos": [0, 0]});');
             zoof.command('EXEC zoof.setProps("Button2", "flex", (0, 0));');
-            zoof.command('EXEC zoof.createButton({"hflex": 0, "className": "zf-button zf-widget", "id": "Button3", "parent": "body", "text": "Bar", "vflex": 0, "pos": [0, 0]});');
+            zoof.command('EXEC zoof.createButton({"hflex": 0, "className": "zf-button zf-widget", "id": "Button3", "parent": "HSplit1", "text": "At the right", "vflex": 0, "pos": [0, 0]});');
             zoof.command('EXEC zoof.setProps("Button3", "flex", (0, 0));');
+            zoof.command("EXEC zoof.get('HSplit1').applyLayout();");
         };
     </script>
     <script>"use strict";function decodeUtf8(arrayBuffer){var result="",i=0,c=0,c1=0,c2=0,c3=0,data=new window.Uint8Array(arrayBuffer);if(data.length>=3&&data[0]===0xef&&data[1]===0xbb&&data[2]===0xbf){i=3;}while(i<data.length){c=data[i];if(c<128){result+=String.fromCharCode(c);i+=1;}else if(c>191&&c<224){if(i+1>=data.length){throw "UTF-8 Decode failed. Two byte character was truncated.";}c2=data[i+1];result+=String.fromCharCode(((c&31)<<6)|(c2&63));i+=2;}else{if(i+2>=data.length){throw "UTF-8 Decode failed. Multi byte character was truncated.";}c2=data[i+1];c3=data[i+2];result+=String.fromCharCode(((c&15)<<12)|((c2&63)<<6)|(c3&63));i+=3;}}return result;}</script>
