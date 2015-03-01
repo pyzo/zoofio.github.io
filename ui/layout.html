@@ -334,7 +334,23 @@ it will be able to hold any number of children.</p>
             <span class="bp">self</span><span class="o">.</span><span class="n">b2</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;At the right&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<a target='new' href='examplec92ef971855c7b912dcd12e6ecac24af.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 500px; height: 300px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe src='examplec92ef971855c7b912dcd12e6ecac24af.html' style='width: 100%; height: 100%; border: 2px solid #094;'>iframe not supported</iframe></div><br /></div>
+<a target='new' href='examplec92ef971855c7b912dcd12e6ecac24af.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 500px; height: 300px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe src='examplec92ef971855c7b912dcd12e6ecac24af.html' style='width: 100%; height: 100%; border: 2px solid #094;'>iframe not supported</iframe></div><br /><p>Let&#8217;s make it more interesting, a splitter inside a HBox, where the splitter has
+a button on the left and a hbox on the right:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">zoof</span> <span class="kn">import</span> <span class="n">ui</span>
+
+<span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">ui</span><span class="o">.</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">HBox</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Button in hbox&#39;</span><span class="p">,</span> <span class="n">flex</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">HSplit</span><span class="p">(</span><span class="n">flex</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+                <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Button in splitter&#39;</span><span class="p">)</span>
+                <span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">HBox</span><span class="p">():</span>
+                    <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Right A&#39;</span><span class="p">,</span> <span class="n">flex</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                    <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Right B&#39;</span><span class="p">,</span> <span class="n">flex</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="n">ui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Right C&#39;</span><span class="p">,</span> <span class="n">flex</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<a target='new' href='example856f5fc760e52a2ac2b84ed986eb6ac8.html' style='font-size:small; float:right;'>open in new tab</a><div style='width: 500px; height: 300px; align: center; resize:both; overflow: hidden; box-shadow: 5px 5px 5px #777;'><iframe src='example856f5fc760e52a2ac2b84ed986eb6ac8.html' style='width: 100%; height: 100%; border: 2px solid #094;'>iframe not supported</iframe></div><br /></div>
 </div>
 
 
